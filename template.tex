@@ -1,0 +1,35 @@
+\documentclass[11pt, a4paper]{jsarticle}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage[top=30truemm,bottom=30truemm,left=30truemm,right=30truemm]{geometry}
+
+\begin{document}
+\title{Weekly Report}
+\author{<%= @name %>}
+\date{<%= @date_str %>}
+\maketitle
+
+\section{Thanks card}
+\begin{tabular}{|c|c|}
+\hline
+give & get \\ \hline
+<%= @card_give %> & <%= @card_get %> \\
+\hline
+\end{tabular} \\
+
+\section{Magazine}
+\begin{tabular}{|c|c|c|}
+\hline
+get & pass & have \\ \hline
+<%= @magazine_get %> & <%= @magazine_pass %> & <%= @magazine_have %>\\
+\hline
+\end{tabular} \\
+
+\section{Report}
+\subsection{Regular task}
+\begin{itemize}
+<% @task_names.zip(@task_details) do |name, detail| %>  \item <%= name %> \\ <%= detail %>
+<% end %>
+\end{itemize}
+\subsection{Boyaki}
+<%= @boyaki %>
+\end{document}

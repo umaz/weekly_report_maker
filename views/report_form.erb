@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+
+  <title>Weekly Report Maker</title>
+
+  <style type="text/css">
+    body {
+      margin: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Weekly Report Maker</h1>
+  <div class="row">
+    <form class="col s12" action="create" method="POST">
+      <h4>User</h4>
+      <div class="row">
+        <div class="input-field col s6">
+          <label class="active" for="name">Name</label>
+          <input name="name" type="text" class="validate" />
+        </div>
+      </div>
+
+      <h4>Thanks Card</h4>
+      <div class="row">
+        <div class="input-field col s2">
+          <label class="active" for="card_give">Give</label>
+          <input name="card_give" type="number" class="validate" />
+        </div>
+        <div class="input-field col s2">
+          <label class="active" for="card_get">Get</label>
+          <input name="card_get" type="number" class="validate" />
+        </div>
+      </div>
+
+      <h4>Magazine</h4>
+      <div class="row">
+        <div class="input-field col s2">
+          <label class="active" for="magazine_get">Get</label>
+          <input id="magazine_get" name="magazine_get" type="number" class="validate" />
+        </div>
+        <div class="input-field col s2">
+          <label class="active" for="magazine_pass">Pass</label>
+          <input name="magazine_pass" type="number" class="validate" />
+        </div>
+        <div class="input-field col s2">
+          <label class="active" for="magazine_have">Have</label>
+          <input name="magazine_have" type="number" class="validate" />
+        </div>
+      </div>
+
+      <h4>Regular task</h4>
+      <p class="caption">
+        If you have more regular tasks, you add URL paramaters to "?tasks=Num". Num is the your tasks.
+      </p>
+      <% @tasks.to_i.times do |index| %>
+        <div class="row">
+          <div class="input-field col s2">
+            <label class="active" >Task Item</label>
+            <input name="task_name[]" />
+          </div>
+        <div class="row">
+          <div class="input-field col s4">
+            <label class="active" >Detail</label>
+            <input name="task_detail[]" />
+          </div>
+        </div>
+      <% end %>
+
+      <h4>Boyaki</h4>
+      <div class="row">
+        <div class="input-field col s6">
+          <textarea id="boyaki" name="boyaki" class="materialize-textarea"></textarea>
+          <label class="active">Write your last week's episode.</label>
+        </div>
+      </div>
+
+      <button class="btn waves-effect waves-light" type="submit">Create Tex file!</button>
+    </form>
+  </div>
+
+</body>
+</html>

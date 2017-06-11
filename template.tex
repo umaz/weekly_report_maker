@@ -27,7 +27,7 @@ get & pass & have \\ \hline
 \section{Report}
 \subsection{Regular task}
 \begin{itemize}
-<% @task_names.zip(@task_details) do |name, detail| %>  \item <%= name %> \\ <%= detail %>
+<% @task_names.zip(@task_details).delete_if{|zip| zip[0] == ""}.each do |name, detail| %>  \item <%= name %> \\ <%= detail %>
 <% end %>
 \end{itemize}
 \subsection{Boyaki}

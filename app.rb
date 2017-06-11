@@ -4,10 +4,6 @@ require 'erb'
 require 'date'
 
 get '/' do
-  @tasks = params[:tasks]
-  if not @tasks
-    @tasks = 2
-  end
   erb :report_form
 end
 

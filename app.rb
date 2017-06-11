@@ -38,7 +38,7 @@ post '/create' do
   end
 
   file_date = date.strftime("%Y%m%d")
-  file_name = "weekly_report_#{file_date}.tex"
+  file_name = "#{file_date}-#{@name.split[1].downcase}.tex"
 
   attachment file_name
   erb_template.result(binding)

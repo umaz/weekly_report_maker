@@ -3,11 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--Import Google Icon Font-->
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
-
-  <!-- Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
 
   <title>Weekly Report Maker</title>
 </head>
@@ -22,36 +21,36 @@
             <h4>User</h4>
             <div class="row">
               <div class="input-field col s6">
-                <label class="active" for="name">Name</label>
                 <input name="name" type="text" class="validate" />
+                <label class="active" for="name">Name</label>
               </div>
             </div>
 
             <h4>Thanks Card</h4>
             <div class="row">
               <div class="input-field col s2">
-                <label class="active" for="card_give">Give</label>
                 <input name="card_give" type="number" class="validate" />
+                <label class="active" for="card_give">Give</label>
               </div>
               <div class="input-field col s2">
-                <label class="active" for="card_get">Get</label>
                 <input name="card_get" type="number" class="validate" />
+                <label class="active" for="card_get">Get</label>
               </div>
             </div>
 
             <h4>Magazine</h4>
             <div class="row">
               <div class="input-field col s2">
-                <label class="active" for="magazine_get">Get</label>
                 <input id="magazine_get" name="magazine_get" type="number" class="validate" />
+                <label class="active" for="magazine_get">Get</label>
               </div>
               <div class="input-field col s2">
-                <label class="active" for="magazine_pass">Pass</label>
                 <input name="magazine_pass" type="number" class="validate" />
+                <label class="active" for="magazine_pass">Pass</label>
               </div>
               <div class="input-field col s2">
-                <label class="active" for="magazine_have">Have</label>
                 <input name="magazine_have" type="number" class="validate" />
+                <label class="active" for="magazine_have">Have</label>
               </div>
             </div>
 
@@ -62,14 +61,14 @@
             <% @tasks.to_i.times do |index| %>
               <div class="row">
                 <div class="input-field col s2">
-                  <label class="active" >Task Item</label>
-                  <input name="task_name[]" />
+                  <input name="task_name[]" type="text" />
+                  <label class="active">Task Item</label>
                 </div>
               </div>
               <div class="row">
                 <div class="input-field col s4">
-                  <label class="active" >Detail</label>
-                  <input name="task_detail[]" />
+                  <input name="task_detail[]" type="text" />
+                  <label class="active">Detail</label>
                 </div>
               </div>
             <% end %>
@@ -88,5 +87,9 @@
       </div>
     </div>
   </main>
+  <!--Import jQuery before materialize.js-->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
 </body>
 </html>

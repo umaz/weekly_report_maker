@@ -4,7 +4,7 @@ require 'erb'
 require 'date'
 
 get '/' do
-  @tasks = params[:tasks] if params[:tasks]
+  @tasks = params[:tasks]
   if not @tasks
     @tasks = 2
   end
@@ -12,8 +12,8 @@ get '/' do
 end
 
 post '/create' do
-
-  @name = params[:name]
+  p params
+  @name = "#{params[:firstname]} #{params[:lastname]}"
   @card_give = params[:card_give]
   @card_get = params[:card_get]
   @magazine_get = params[:magazine_get]
@@ -38,7 +38,7 @@ post '/create' do
   end
 
   file_date = date.strftime("%Y%m%d")
-  file_name = "#{file_date}-#{@name.split[1].downcase}.tex"
+  file_name = "#{file_date}-#{params[:lastname].downcase}.tex"
 
   attachment file_name
   erb_template.result(binding)

@@ -7,6 +7,10 @@
   <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+  <!--Import jQuery before materialize.js-->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
 
   <title>Weekly Report Maker</title>
 </head>
@@ -21,8 +25,12 @@
             <h4>User</h4>
             <div class="row">
               <div class="input-field col s6">
-                <input name="name" type="text" class="validate" />
-                <label class="active" for="name">Name</label>
+                <input name="firstname" type="text" class="validate" required />
+                <label class="active" for="firstname">First Name</label>
+              </div>
+              <div class="input-field col s6">
+                <input name="lastname" type="text" class="validate" required />
+                <label class="active" for="lastname">Last Name</label>
               </div>
             </div>
 
@@ -87,9 +95,5 @@
       </div>
     </div>
   </main>
-  <!--Import jQuery before materialize.js-->
-  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <!-- Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
 </body>
 </html>

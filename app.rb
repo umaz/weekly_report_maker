@@ -8,7 +8,6 @@ get '/' do
 end
 
 post '/create' do
-  p params
   @name = "#{params[:firstname]} #{params[:lastname]}"
   @card_give = params[:card_give]
   @card_get = params[:card_get]
